@@ -5,7 +5,7 @@
 - 	Estou na *turma 12*, e muito animado com esta jornada!
 - 	Vou armazenar todos os exercícios propostos aqui!
 
-===============Algumas das skills que estarão aqui:  ===============
+==============Algumas das skills que estarão aqui:  ==============
 
 - 	Git e GitHub;
 - 	HTML, CSS e JavaScript;
