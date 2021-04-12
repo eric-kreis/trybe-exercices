@@ -1,11 +1,11 @@
-- ====Sejam bem vindos ao meu repositório dos exercíciso da Trybe!====
+====Sejam bem vindos ao meu repositório dos exercíciso da Trybe!====
 
 - 	A Trybe é uma escola do futuro que, te ensina a aprender,
 	programar e trabalhar também!
 - 	Estou na *turma 12*, e muito animado com esta jornada!
 - 	Vou armazenar todos os exercícios propostos aqui!
 
-- ==============Algumas das skills que estarão aqui: ==============
+===============Algumas das skills que estarão aqui:  ===============
 
 - 	Git e GitHub;
 - 	HTML, CSS e JavaScript;
