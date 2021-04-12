@@ -3,7 +3,10 @@
 programar e trabalhar também!
 - Estou na *turma 12*, e muito animado com esta jornada!
 - Vou armazenar todos os exercícios propostos aqui!
+
 - Aqui você encontrará skills como:
+
+
 - Git e GitHub;
 - HTML, CSS e JavaScript;
 - ReactJS e ExpressJS;
