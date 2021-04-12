@@ -1,0 +1,5 @@
+- git log
+- git remove
+- git push
+- git pull
+- git fetch
