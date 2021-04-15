@@ -1,4 +1,0 @@
-O que aprendi ou está em andamento na Trybe:
--Unix
--Bash
--Git e GitHub
