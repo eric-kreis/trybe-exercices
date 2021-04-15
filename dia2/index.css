@@ -1,0 +1,38 @@
+body {
+    font-family: Antonio, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+p {
+    font-weight: 600;
+    font-size: 2em;
+    text-decoration: underline overline;
+    font-style: normal;
+    line-height: 50%;
+}
+
+h1 {
+    color: orange;
+    font-family: sans-serif;
+}
+
+ul {
+    text-align: center;
+    background-color: aqua;
+}
+
+.favoriteColor {
+    background-color: gray;
+}
+
+#amarelo {
+    background:yellow;
+}
+
+#vermelho {
+    background: red;
+}
+
+#marrom {
+    background: brown;
+}
