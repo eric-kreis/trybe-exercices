@@ -1,0 +1,8 @@
+- git log
+- git remove
+- git push
+- git pull
+- git fetch
+- git branch -d "nome da branch"
+- git checkout -b "nome da branch"
+- git push -u origin "nome da branch"
