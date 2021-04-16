@@ -1,0 +1,42 @@
+a {
+    text-decoration: none;
+}
+
+li {
+    font-size: 20px;
+}
+
+ol li {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+ol li.par {
+    color: green;
+}
+
+.primo {
+    text-transform: capitalize;
+}
+
+h1, h3 {
+    color: red;
+}
+
+h1 {
+    font-size: 40px;
+    border: 1px black solid;
+}
+
+.umAtres {
+    color: blue;
+}
+
+.java {
+    background-color: pink;
+}
+
+.sites:hover {
+    font-weight: bold;
+    color: aqua;
+}

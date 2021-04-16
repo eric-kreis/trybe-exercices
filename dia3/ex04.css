@@ -1,0 +1,29 @@
+#primaria {
+    background-color: rgb(53, 154, 236);
+}
+
+#secundaria {
+    background-color: blueviolet;
+}
+
+#complementar {
+    background-color: rgb(49, 0, 128);
+    height: 100px;
+}
+
+#escura {
+    background-color: gray;
+}
+
+#clara {
+    background-color: rgb(16, 179, 179);
+}
+
+div:hover {
+    border:solid #444955;
+    transition:linear;
+}
+
+.impar {
+    font-style: italic;
+}
