@@ -1,0 +1,44 @@
+h1, h2, h3 {
+  text-align: center;
+}
+
+.podium {
+  text-align: center;
+}
+
+.first {
+  background-color: rgb(235, 200, 84);
+  font-size: 20px;
+  height: 50px;
+  width: 200px;
+  margin: auto;
+}
+
+.second {
+  background-color: rgb(219, 219, 219);
+  font-size: 20px;
+  height: 50px;
+  text-align: center;
+  width: 300px;
+}
+
+.third {
+  background-color: rgb(170, 142, 106);
+  font-size: 20px;
+  height: 50px;
+  text-align: center;
+  width: 300px;
+}
+
+.resto {
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.premiacao li{
+  display: inline;
+}
