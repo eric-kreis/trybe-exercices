@@ -1,4 +1,4 @@
-====Sejam bem vindos ao meu repositório dos exercíciso da Trybe!====
+====Sejam bem vindos ao meu repositório dos exercícios da Trybe!====
 
 - 	A Trybe é uma escola do futuro que, te ensina a aprender,
 	programar e trabalhar também!
