@@ -8,8 +8,8 @@ function corTodosBackground(element, cor) {
   if (elemento.length === 0) {
     elemento[0].style.background = cor;
   }
-  for (let index = 0; index < elemento.length; index += 1) {
-    elemento[index].style.background = cor;
+  for (let index of elemento) {
+    index.style.background = cor;
   }
 }
 
