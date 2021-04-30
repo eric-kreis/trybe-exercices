@@ -1,12 +1,12 @@
 function corBackground(element, cor) {
   let elemento = document.querySelector(element);
-  return elemento.style.background = cor;
+  elemento.style.background = cor;
 }
 
 function corTodosBackground(element, cor) {
   let elemento = document.querySelectorAll(element);
   if (elemento.length === 0) {
-    return elemento[0].style.background = cor;
+    elemento[0].style.background = cor;
   }
   for (let index = 0; index < elemento.length; index += 1) {
     elemento[index].style.background = cor;
@@ -15,7 +15,7 @@ function corTodosBackground(element, cor) {
 
 function corFonte(element, cor) {
   let elemento = document.querySelectorAll(element);
-  return elemento[0].style.color = cor;
+  elemento[0].style.color = cor;
 }
 
 corFonte('body', 'white');
