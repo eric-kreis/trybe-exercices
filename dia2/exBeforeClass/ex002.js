@@ -1,0 +1,10 @@
+let elementoAtual = document.getElementById('elementoOndeVoceEsta');
+let pai = document.getElementById('pai');
+let primeiroFilhoDoFilho = elementoAtual.firstElementChild;
+let irmaoCriado = document.createElement('p');
+let filhoCriado = document.createElement('section');
+let filhoDoFilhoCriado = document.createElement('aside');
+pai.appendChild(irmaoCriado);
+elementoAtual.appendChild(filhoCriado);
+primeiroFilhoDoFilho.appendChild(filhoDoFilhoCriado);
+filhoCriado.parentNode.nextSibling.nextSibling;
