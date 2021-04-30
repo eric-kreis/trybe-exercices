@@ -5,9 +5,6 @@ function corBackground(element, cor) {
 
 function corTodosBackground(element, cor) {
   let elemento = document.querySelectorAll(element);
-  if (elemento.length === 0) {
-    elemento[0].style.background = cor;
-  }
   for (let index of elemento) {
     index.style.background = cor;
   }
