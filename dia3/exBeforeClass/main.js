@@ -17,7 +17,8 @@ function changeText() {
 
 function redirecionar() {
   alert('Você será redirecionado!');
-  window.location.href = 'https://eric-kreis.github.io/';
+  window.open('https://eric-kreis.github.io/');
+  // document.location.href = "https://bhdasbduiasbdas.com";
 }
 
 function mudarCor(element) {
@@ -28,7 +29,7 @@ function resetaCor(element) {
   element.target.style.color = 'white';
 }
 
-input.addEventListener('keyup', changeText);
+input.addEventListener('change', changeText);
 divUm.addEventListener('click', changeTech);
 divDois.addEventListener('click', changeTech);
 divTres.addEventListener('click', changeTech);
