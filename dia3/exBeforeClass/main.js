@@ -15,17 +15,17 @@ function changeText() {
   tech.innerText = input.value;
 }
 
-function redirecionar() {
+function redirect() {
   alert('Você será redirecionado!');
   window.open('https://eric-kreis.github.io/');
   // document.location.href = "https://bhdasbduiasbdas.com";
 }
 
-function mudarCor(element) {
+function changeColor(element) {
   element.target.style.color = '#2fc18c';
 }
 
-function resetaCor(element) {
+function resetColor(element) {
   element.target.style.color = 'white';
 }
 
@@ -33,9 +33,9 @@ input.addEventListener('change', changeText);
 divUm.addEventListener('click', changeTech);
 divDois.addEventListener('click', changeTech);
 divTres.addEventListener('click', changeTech);
-myWebpage.addEventListener('dblclick', redirecionar);
-myWebpage.addEventListener('mouseover', mudarCor);
-myWebpage.addEventListener('mouseleave', resetaCor);
+myWebpage.addEventListener('dblclick', redirect);
+myWebpage.addEventListener('mouseover', changeColor);
+myWebpage.addEventListener('mouseleave', resetColor);
 
 /*
  Copie esse arquivo e edite apenas ele;
