@@ -37,7 +37,7 @@ myWebpage.addEventListener('dblclick', redirect);
 myWebpage.addEventListener('mouseover', changeColor);
 myWebpage.addEventListener('mouseleave', resetColor);
 
-/*
+/* 
  Copie esse arquivo e edite apenas ele;
  Crie uma função que adicione a classe 'tech' ao elemento selecionado;
 1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
@@ -50,7 +50,7 @@ redirecione para alguma página;
 a cor do mesmo;
 
 Segue abaixo um exemplo do uso de event.target:
-*/
+ */
 
 function resetText(event) {
   event.target.innerText = 'Opção reiniciada';
