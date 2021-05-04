@@ -1,0 +1,65 @@
+body {
+  margin: 0px;
+  margin-bottom: 20px;
+  font-family: monospace;
+  margin-top: 3%;
+  margin-left: 2%;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.options {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 10px;
+  border-style: solid;
+}
+
+#white {
+  background-color: white;
+}
+
+#blue {
+  background-color: #B9D7EA;
+}
+
+#purple {
+  background-color: #CEBEE1;
+}
+
+#pink {
+  background-color: #F7DBD7;
+}
+
+#green {
+  background-color: #C7F7C8;
+}
+
+.main-content {
+  text-align: center;
+  display: inline-block;
+  width: 80%;
+  margin-left: 5%;
+}
+
+article {
+  display: inline-block;
+  width: 40%;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+.content {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: justify;
+}
