@@ -134,9 +134,10 @@ window.onload = function () {
     days.addEventListener('click', function(element) {
       if (element.target.style.backgroundColor === 'green') {
         element.target.style.backgroundColor = '#EEEEEE';
+        element.target.style.color = '#666';
       } else {
         element.target.style.backgroundColor = 'green';
-        element.target.style.color = '#666';
+        element.target.style.color = 'white';
       }
     });
   }
