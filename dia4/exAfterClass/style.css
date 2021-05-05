@@ -2,8 +2,8 @@ body {
   margin: 0px;
   margin-bottom: 20px;
   font-family: monospace;
-  margin-top: 3%;
-  margin-left: 2%;
+  text-align: center;
+  margin-top: 5%;
 }
 
 h1 {
@@ -11,45 +11,116 @@ h1 {
   margin-bottom: 50px;
 }
 
+.edit-bar {
+  position: absolute;
+  left: -178px;
+  width: 200px;
+  font-size: larger;
+  font-family: 'Itim', cursive;
+  transition: left 0.25s ease-in-out;
+}
+
+.edit-bar--open {
+  left: 0px;
+}
+
+#active-section {
+  padding-left: 70px;
+  box-shadow: 3px 3px 10px grey;
+  margin-bottom: 20px;
+  border-radius: 5px 1px;
+}
+
+#active-bar {
+  display: inline;
+  height: 20px;
+  width: 20px;
+  border-style: none;
+  font-size: large;
+  appearance: none;
+}
+
+#active-bar:hover {
+  cursor: pointer;
+}
+
 .options {
-  display: inline-block;
-  vertical-align: top;
+  width: 150px;
+  margin-left: 5px;
+  opacity: 0;
+  transition: 0.50s ease-in-out;
+}
+
+.options--open {
+  opacity: 1;
 }
 
 .button {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  display: block;
-  margin-bottom: 10px;
+  display: inline-block;
   border-style: solid;
+  margin-right: 10px;
+  margin-top: 10px;
+
 }
 
-#white {
+#whiteBG {
   background-color: white;
 }
 
-#blue {
+#blueBG {
   background-color: #B9D7EA;
 }
 
-#purple {
+#purpleBG {
   background-color: #CEBEE1;
 }
 
-#pink {
+#pinkBG {
   background-color: #F7DBD7;
 }
 
-#green {
+#greenBG {
   background-color: #C7F7C8;
 }
 
-.main-content {
-  text-align: center;
+#blackTXT {
+  background-color: black;
+}
+
+#blueTXT {
+  background-color: #39A5EA;
+}
+
+#purpleTXT {
+  background-color: #9B1EE9;
+}
+
+#pinkTXT {
+  background-color: #D32F7C;
+}
+
+#greenTXT {
+  background-color: #00BC1C;
+}
+
+.size-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
   display: inline-block;
+  border-style: solid;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+
+.main-content {
   width: 80%;
-  margin-left: 5%;
+  display: inline-block;
 }
 
 article {
@@ -62,4 +133,6 @@ article {
 .content {
   font-family: 'Courier New', Courier, monospace;
   text-align: justify;
+  font-size: 16px;
+  line-height: 20px;
 }

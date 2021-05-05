@@ -4,19 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
-  <title>Kreis News</title>
+  <title>Eric News</title>
 </head>
 <body>
-  <aside class="options">
-    <section id="color-buttons">
+  <aside class="edit-bar">
+    <section id="active-section">
+      <label for="active-bar">Edit options</label>
+      <p id="active-bar">≡</p>
     </section>
-    <section id="font-buttons">
+    <section class="options">
+      <label for="color-buttons">Change Background Color</label>
+      <section id="color-buttons"></section>
+      <label for="font-color-buttons">Change Font Color</label>
+      <section id="font-color-buttons"></section>
+      <label for="font-size-buttons">Change Font Size</label>
+      <section id="font-size-buttons"></section>
+      <label for="line-height-buttons">Change Line Height</label>
+      <section id="line-height-buttons"></section>
+      <label for="font-family-buttons">Type: Arial, Monospace, Courier New or Intim</label>
+      <section id="font-family-buttons">
+        <input type="text">
+      </section>
     </section>
   </aside>
   <main class="main-content">
-    <h1 class="title">Kreis News</h1>
+    <h1 class="title">Eric News</h1>
     <section id="top-articles">
       <article id="first-article">
         <h3>What's going on?</h3>
