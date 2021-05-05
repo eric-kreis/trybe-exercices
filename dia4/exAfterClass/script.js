@@ -221,6 +221,43 @@ window.onload = function () {
     });
   }
 
+  function changeFamily() {
+    const input = document.getElementById('fontInput');
+    const button = document.getElementById('familyButton');
+    const paragraphs = document.querySelectorAll('.content');
+    input.focus();
+    button.addEventListener('click', familyExec);
+    input.addEventListener('keyup', function (event) {
+      if (event.keyCode === 13) {
+        familyExec();
+      }
+    });
+    function familyExec() {
+      if (input.value.length === 0 ) {
+        alert('Type something');
+      } else {
+        if (input.value.toUpperCase() === 'ARIAL') {
+          for (let paragraph of paragraphs) {
+            paragraph.style.fontFamily = 'Arial, sans-serif';
+            input.value = '';
+          }
+        } else if (input.value.toUpperCase() === 'MONOSPACE') {
+          for (let paragraph of paragraphs) {
+            paragraph.style.fontFamily = 'monospace';
+            input.value = '';
+          }
+        } else if (input.value.toUpperCase() === 'INTIM') {
+          for (let paragraph of paragraphs) {
+            paragraph.style.fontFamily = 'Itim';
+            input.value = '';
+          }
+        } else {
+          alert('Invalid family');
+        }
+      }
+    };
+  }
+
   activeSideBar();
   mouseBGPointer()
   colorButtonsExec();
@@ -230,4 +267,5 @@ window.onload = function () {
   mouseFontSizePointer();
   lineHeightButtonExec();
   mouselineHeightPointer();
+  changeFamily();
 }

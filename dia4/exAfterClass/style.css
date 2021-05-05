@@ -45,7 +45,7 @@ h1 {
 }
 
 .options {
-  width: 150px;
+  width: 155px;
   margin-left: 5px;
   opacity: 0;
   transition: 0.50s ease-in-out;
@@ -118,6 +118,17 @@ h1 {
   font-size: x-large;
 }
 
+#font-family-buttons {
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+#fontInput {
+  width: 50%;
+  text-align: left;
+}
+
 .main-content {
   width: 80%;
   display: inline-block;
@@ -131,7 +142,7 @@ article {
 }
 
 .content {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace;
   text-align: justify;
   font-size: 16px;
   line-height: 20px;
