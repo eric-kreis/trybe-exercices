@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <title>Forumlário de currículo</title>
+</head>
+<body>
+  <main>
+    <form action="" method="get" id="formulario">
+      <h1>FORMULÁRIO</h1>
+      <fieldset>
+        <legend>Seus dados</legend>
+        <label for="input-nome">Nome:</label>
+        <input type="text" name="nome" id="input-nome" maxlength="40" required>
+        <label for="input-email">Email:</label>
+        <input type="email" name="email" id="input-email" maxlength="50" required>
+        <label for="input-cpf">CPF:</label>
+        <input type="text" name="cpf" id="input-cpf" 
+        minlength="11" maxlength="11" required>
+        <label for="input-endereco">Endereço:</label>
+        <input type="text" name="endereco" id="input-endereco" maxlength="200" required>
+        <label for="select-estado">Selecione seu estado:
+          <br>
+          <select name="estados" id="select-estado">
+            <option value="ac">Acre</option>
+            <option value="al">Alagoas</option>
+            <option value="ap">Amapá</option>
+            <option value="am">Amazonas</option>
+            <option value="ba">Bahia</option>
+            <option value="ce">Ceará</option>
+            <option value="es">Espírito Santo</option>
+            <option value="go">Goiás</option>
+            <option value="ma">Maranhão</option>
+            <option value="mt">Mato Grosso</option>
+            <option value="ms">Mato Grosso do Sul</option>
+            <option value="mg">Minas Gerais</option>
+            <option value="pa">Pará</option>
+            <option value="pb">Paraíba</option>
+            <option value="pr">Paraná</option>
+            <option value="pe">Pernambuco</option>
+            <option value="pi">Piauí</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="rn">Rio Grande do Norte</option>
+            <option value="rs">Rio Grande do Sul</option>
+            <option value="ro">Rondônia</option>
+            <option value="rr">Roraima</option>
+            <option value="sc">Santa Catarina</option>
+            <option value="sp">São Paulo</option>
+            <option value="se">Sergipe</option>
+            <option value="to">Tocantins</option>
+            <option value="df" selected>Distrito Federal</option>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Seu último emprego</legend>
+        <label for="texto-resumo">Resumo do currículo:</label>
+        <textarea name="resumo" id="texto-resumo" cols="30" rows="10" maxlength="1000" required></textarea>
+        <label for="input-cargo">Cargo:</label>
+        <input type="text" name="cargo" id="input-cargo" maxlength="40" required>
+        <label for="input-date">Data de início:</label>
+        <input type="text" name="data-de-inicio" id="input-date" maxlength="10" required>
+      </fieldset>
+    </form>
+  </main>
+</body>
+</html>

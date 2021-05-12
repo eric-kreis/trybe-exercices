@@ -1,0 +1,47 @@
+html {
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: medium;
+}
+
+form {
+  border: 1px solid rgb(214, 206, 206);
+  width: 50%;
+  margin: auto;
+}
+
+fieldset {
+  max-width: 90%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+fieldset input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 2px 5px;
+}
+
+#input-date {
+  width: 15%;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+#botao-enviar {
+  margin-top: 10px;
+  margin-left: 87%;
+  font-size: large;
+  margin-bottom: 10px;
+}
