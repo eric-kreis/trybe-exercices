@@ -2,6 +2,11 @@ html {
   height: 100%;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
   text-align: center;
   font-size: medium;
@@ -22,14 +27,24 @@ fieldset {
   justify-content: left;
 }
 
+fieldset legend {
+  margin-left: 30px;
+}
+
 fieldset input {
   width: 100%;
   margin-bottom: 10px;
   padding: 2px 5px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #input-date {
-  width: 15%;
+  width: 200px;
 }
 
 textarea {
@@ -41,7 +56,23 @@ textarea {
 
 #botao-enviar {
   margin-top: 10px;
-  margin-left: 87%;
   font-size: large;
   margin-bottom: 10px;
+  margin-left: 75%;
+}
+
+#resultado {
+  display: block;
+  margin-top: 0;
+  width: 40%;
+  min-width: 40%;
+}
+
+#sessao-resultado div {
+  line-height: 30px;
+}
+
+#botao-limpar {
+  margin-left: 2%;
+  font-size: large;
 }
