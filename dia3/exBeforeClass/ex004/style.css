@@ -1,0 +1,20 @@
+.box {
+  color: #9069EF;
+  background-color: rgb(243, 243, 243);
+  border: 2px solid #232525;
+  font-size: 50px;
+  height: 60px;
+  margin: 10px 5px;
+  text-align: center;
+  width: 40%;
+}
+
+.box-container {
+  flex-flow: column;
+  align-items: flex-end ;
+  align-content: space-between;
+  background-color: #0fa36b;
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+}
