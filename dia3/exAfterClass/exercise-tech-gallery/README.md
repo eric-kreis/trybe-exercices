@@ -1,37 +1,3 @@
-Esse é um projeto para o conteúdo de `CSS Flexbox`.
-
-### Antes de iniciar
-
-Crie um fork desse projeto e para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
-
-Após feito o fork, clone o repositório criado para o seu computador.
-
-Vá para a branch master do seu projeto e execute o comando:
-
-git branch
-
-Mude para a branch tech-gallery com o comando git checkout -b tech-gallery. É nessa branch que você realizará a solução para o exercício.
-
-Observe o que deve ser feito nas instruções.
-
-Após a solução dos exercícios, abra um PR no seu repositório forkado e, se quiser, mergeie para a master, sinta-se a vontade!
-
-**Atenção!** Quando for criar o PR você irá se deparar com essa tela:
-
-![PR do exercício](images/example-pr.png)
-
-É necessário realizar uma mudança. Clique no *base repository* como na imagem abaixo:
-
-![Mudando a base do repositório](images/change-base.png)
-
-Mude para o seu repositório. Seu nome estará na frente do nome dele, por exemplo: `antonio/tech-gallery`. Depois desse passo a página deve ficar assim:
-
-![Após mudança](images/after-change.png)
-
-Agora basta criar o PULL REQUEST clicando no botão `Create Pull Request`.
-
-Para cada PR realize esse processo.
-
 ### COMEÇANDO OS EXERCÍCIOS
 
 ![Trybe Gallery Preview](images/trybe-tech-gallery.jpeg)
