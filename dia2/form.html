@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <title>Formulário de currículo</title>
+</head>
+<body>
+  <main>
+    <form action="" method="get" id="formulario">
+      <h1>FORMULÁRIO</h1>
+      <fieldset>
+        <legend>Seus dados</legend>
+        <div class="form-floating mb-3">
+          <input  class="form-control" type="text" name="Nome" id="input-nome" placeholder="Digite seu nome" maxlength="40" required>
+          <label for="input-nome">Nome</label>
+        </div>
+        <!-- <label for="input-email">Email:</label> -->
+        <div class="form-floating mb-3">
+          <input class="form-control" type="email" name="Email" id="input-email"  placeholder="name@example.com" maxlength="50" required>
+          <label for="input-email">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" type="number" name="CPF" id="input-cpf" placeholder="Digite seu CPF" required>
+          <label for="input-cpf">CPF</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" type="text" name="Endereço" id="input-endereco" placeholder="Digite seu endereço" maxlength="200" required>
+          <label for="">Endereço</label>
+        </div>
+        <div>
+          <label for="select-estado">Selecione seu estado:
+            <br>
+            <select class="form-select form-select-md" aria-label=".form-select-sm example" name="estados" id="select-estado">
+              <option value="df" selected>Distrito Federal</option>
+              <option value="ac">Acre</option>
+              <option value="al">Alagoas</option>
+              <option value="ap">Amapá</option>
+              <option value="am">Amazonas</option>
+              <option value="ba">Bahia</option>
+              <option value="ce">Ceará</option>
+              <option value="es">Espírito Santo</option>
+              <option value="go">Goiás</option>
+              <option value="ma">Maranhão</option>
+              <option value="mt">Mato Grosso</option>
+              <option value="ms">Mato Grosso do Sul</option>
+              <option value="mg">Minas Gerais</option>
+              <option value="pa">Pará</option>
+              <option value="pb">Paraíba</option>
+              <option value="pr">Paraná</option>
+              <option value="pe">Pernambuco</option>
+              <option value="pi">Piauí</option>
+              <option value="rj">Rio de Janeiro</option>
+              <option value="rn">Rio Grande do Norte</option>
+              <option value="rs">Rio Grande do Sul</option>
+              <option value="ro">Rondônia</option>
+              <option value="rr">Roraima</option>
+              <option value="sc">Santa Catarina</option>
+              <option value="sp">São Paulo</option>
+              <option value="se">Sergipe</option>
+              <option value="to">Tocantins</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+      <hr>
+      <fieldset>
+        <legend>Seu último emprego</legend>
+        <label for="texto-resumo">Resumo do currículo:</label>
+        <textarea name="Resumo" id="texto-resumo" cols="30" rows="10" placeholder="Digite aqui o resumo de seu currículo" maxlength="1000" required></textarea>
+        <div class="form-floating mb-3">
+          <input class="form-control" type="text" name="Cargo" id="input-cargo" placeholder="Digite o último cargo" maxlength="40" required>
+          <label for="">Cargo</label>
+        </div>
+        <div>
+          <div>
+            <label for="data">Data de início:</label>
+            <input class="form-control" type="text" name="data-de-inicio" id="input-date" placeholder="dd/mm/aaaa" maxlength="10" required>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <section class="border" id="resultado">
+      <h1>Resultado</h1>
+      <section id="sessao-resultado">
+      </section>
+    </section>
+  </main>
+</body>
+</html>

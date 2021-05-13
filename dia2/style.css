@@ -1,0 +1,79 @@
+html {
+  height: 100%;
+}
+
+main {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: large;
+}
+
+form {
+  border: 1px solid rgb(214, 206, 206);
+  width: 50%;
+  margin: auto;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+fieldset {
+  max-width: 90%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+#resultado {
+  padding: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  display: block;
+  margin-top: 0;
+  width: 40%;
+  min-width: 40%;
+}
+
+div {
+  margin-right: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#input-date {
+  width: 200px;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+#botao-enviar {
+  margin-top: 10px;
+  font-size: large;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+#botao-limpar {
+  margin-left: 2%;
+  font-size: large;
+}
+
+
+#sessao-resultado div {
+  line-height: 30px;
+}
