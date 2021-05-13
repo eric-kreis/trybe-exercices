@@ -6,43 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <!-- <script src="node_modules/just-validate/dist/js/just-validate.min.js"></script> -->
   <script src="script.js"></script>
-  <title>Formulário de currículo</title>
+  <title>Formulário de Currículo</title>
 </head>
 <body>
   <main>
-    <form action="" method="get" id="formulario">
+    <form action="#" method="get" id="formulario" class="border">
       <h1>FORMULÁRIO</h1>
       <fieldset>
         <legend>Seus dados</legend>
         <div class="form-floating mb-3">
-          <input  class="form-control" type="text" name="Nome" id="input-nome" placeholder="Digite seu nome" maxlength="40" required>
+          <input  class="form-control" type="text" name="Nome" id="input-nome" placeholder="Digite seu nome" maxlength="40" data-validate-field="nome">
           <label for="input-nome">Nome</label>
         </div>
-        <!-- <label for="input-email">Email:</label> -->
         <div class="form-floating mb-3">
-          <input class="form-control" type="email" name="Email" id="input-email"  placeholder="name@example.com" maxlength="50" required>
+          <input class="form-control" type="email" name="Email" id="input-email"  placeholder="name@example.com" maxlength="50" data-validate-field="email">
           <label for="input-email">Email</label>
         </div>
         <div class="form-floating mb-3">
-          <input class="form-control" type="number" name="CPF" id="input-cpf" placeholder="Digite seu CPF" required>
+          <input class="form-control" type="number" name="CPF" id="input-cpf" placeholder="Digite seu CPF" data-validate-field="cpf">
           <label for="input-cpf">CPF</label>
         </div>
         <div class="form-floating mb-3">
-          <input class="form-control" type="text" name="Endereço" id="input-endereco" placeholder="Digite seu endereço" maxlength="200" required>
-          <label for="">Endereço</label>
+          <input class="form-control" type="text" name="Endereço" id="input-endereco" placeholder="Digite seu endereço" data-validate-field="endereco">
+          <label for="input-endereco">Endereço</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" type="text" name="Cidade" id="input-cidade" placeholder="Digite sua cidade" data-validate-field="cidade">
+          <label for="input-endereco">Cidade</label>
         </div>
         <div>
           <label for="select-estado">Selecione seu estado:
             <br>
             <select class="form-select form-select-md" aria-label=".form-select-sm example" name="estados" id="select-estado">
-              <option value="df" selected>Distrito Federal</option>
               <option value="ac">Acre</option>
               <option value="al">Alagoas</option>
               <option value="ap">Amapá</option>
               <option value="am">Amazonas</option>
               <option value="ba">Bahia</option>
               <option value="ce">Ceará</option>
+              <option value="df" selected>Distrito Federal</option>
               <option value="es">Espírito Santo</option>
               <option value="go">Goiás</option>
               <option value="ma">Maranhão</option>
@@ -66,20 +70,28 @@
             </select>
           </label>
         </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="residencia" checked>
+          <label class="form-check-label" for="input-cas">Casa</label>
+        </div>
+        <div class="form-check" >
+          <input class="form-check-input" type="radio" name="residencia">
+          <label class="form-check-label" for="input-apt">Apartamento</label>
+        </div>
       </fieldset>
       <hr>
       <fieldset>
         <legend>Seu último emprego</legend>
         <label for="texto-resumo">Resumo do currículo:</label>
-        <textarea name="Resumo" id="texto-resumo" cols="30" rows="10" placeholder="Digite aqui o resumo de seu currículo" maxlength="1000" required></textarea>
+        <textarea name="Resumo" id="texto-resumo" cols="30" rows="10" placeholder="Digite aqui o resumo de seu currículo" maxlength="1000" data-validate-field="resumo" required></textarea>
         <div class="form-floating mb-3">
-          <input class="form-control" type="text" name="Cargo" id="input-cargo" placeholder="Digite o último cargo" maxlength="40" required>
-          <label for="">Cargo</label>
+          <input class="form-control" type="text" name="Cargo" id="input-cargo" placeholder="Digite o último cargo" maxlength="40" data-validate-field="cargo">
+          <label for="input-cargo">Cargo</label>
         </div>
         <div>
           <div>
             <label for="data">Data de início:</label>
-            <input class="form-control" type="text" name="data-de-inicio" id="input-date" placeholder="dd/mm/aaaa" maxlength="10" required>
+            <input class="form-control" type="text" name="data-de-inicio" id="input-date" placeholder="dd/mm/aaaa" maxlength="10" autocomplete="off">
           </div>
         </div>
       </fieldset>

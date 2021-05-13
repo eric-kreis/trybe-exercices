@@ -1,14 +1,62 @@
+/* function justValidateRun() {
+  return new window.JustValidate('.js-form', {
+    Rules: {
+      nome: {
+        required: true,
+        maxLength: 40,
+        minLenth: 3
+      },
+      email: {
+        required: true,
+        email: true,
+        maxLength: 50
+      },
+      cpf: {
+        required: true,
+        maxLength: 11
+      },
+      endereco: {
+        required: true,
+        maxLength: 200
+      },
+      cidade: {
+        required: true,
+        maxLength: 28
+      },
+      resumo: {
+        required: true,
+        maxLength: 1000
+      },
+      cargo: {
+        required: true,
+        maxLength: 500
+      }
+    }
+  });
+}
+
+function justMessages() {
+  return new window.JustValidate('.js-form', {
+    Messages: {
+      required: 'Este campo é obrigatório',
+      email: 'Insira um email válido',
+      maxLength: 'Este campo contém o máximo de :value caractéres',
+      minLength: 'Este campo contém o mínimo de :value caractéres',
+    }
+  });
+} */
+
 function resultElement(input) {
   const resultado = document.getElementById('sessao-resultado');
   const elementoResultado = document.createElement('div');
-  elementoResultado.innerHTML = `${input.name}: ${input.value}.`;
+  elementoResultado.innerHTML = `<strong>${input.name}</strong>: ${input.value}.`;
   resultado.appendChild(elementoResultado);
 }
 
 function failedElement(input, message) {
   const resultado = document.getElementById('sessao-resultado');
   const elementoResultado = document.createElement('div');
-  elementoResultado.innerHTML = `${input.name}: ${message}.`;
+  elementoResultado.innerHTML = `<strong>${input.name}</strong>: ${message}.`;
   resultado.appendChild(elementoResultado);
 }
 
@@ -56,13 +104,37 @@ function verifyAdress() {
   return failedElement(inputEndereco, 'endereço inválido');
 }
 
+function verifyCity() {
+  const city = document.getElementById('input-cidade');
+  if (city.value.length === 0) {
+    return failedElement(city, 'Digite uma cidade para continuar');
+  }
+  if (city.value.length > 0 && city.value.length <= 28) {
+    return resultElement(city);
+  }
+  return failedElement(city, 'cidade inválida');
+}
+
 function verifyState() {
   const options = document.querySelectorAll('option');
   for (const option of options) {
     if (option.selected) {
       const resultado = document.getElementById('sessao-resultado');
       const selecionada = document.createElement('div');
-      selecionada.innerHTML = `Estado: ${option.innerHTML}.`;
+      selecionada.innerHTML = `<strong>Estado</strong>: ${option.innerHTML}.`;
+      return resultado.appendChild(selecionada);
+    }
+  }
+}
+
+function typeOfHome() {
+  const types = document.querySelectorAll('.form-check-input');
+  for (const type of types) {
+    if (type.checked) {
+      const divPai = type.parentNode;
+      const resultado = document.getElementById('sessao-resultado');
+      const selecionada = document.createElement('div');
+      selecionada.innerHTML = `<strong>Residência</strong>: ${divPai.lastElementChild.innerHTML}.`;
       return resultado.appendChild(selecionada);
     }
   }
@@ -91,9 +163,9 @@ function verifyLastJob() {
 }
 
 function isValidDate(day, month, year) {
-  if (Number(day) > 0 && Number(day) <= 31) {
-    if (Number(month) > 0 && Number(month) <= 12) {
-      if (Number(year) > 0) {
+  if (day > 0 && day <= 31) {
+    if (month > 0 && month <= 12) {
+      if (year >= 1990 && year <= 2021) {
         return true;
       }
     }
@@ -104,18 +176,18 @@ function isValidDate(day, month, year) {
 function createFailedMessage(message) {
   const resultado = document.getElementById('sessao-resultado');
   const date = document.createElement('div');
-  date.innerHTML = `data-de-inicio: ${message}.`;
+  date.innerHTML = `<strong>data-de-inicio</strong>: ${message}.`;
   return resultado.appendChild(date);
 }
 
 function failedDate(day, month, year) {
-  if (Number(day) <= 0 || Number(day) > 31) {
+  if (day <= 0 || day > 31) {
     createFailedMessage('Dia inválido');
   }
-  if (Number(month) <= 0 || Number(month) > 12) {
+  if (month <= 0 || month > 12) {
     createFailedMessage('Mês inválido');
   }
-  if (Number(year) <= 0) {
+  if (year < 1990 || year > 2021) {
     createFailedMessage('Ano inválido');
   }
 }
@@ -132,7 +204,7 @@ function verifyDate() {
   if (dateValue.length === 10) {
     return failedDate(day, month, year);
   }
-  return createFailedMessage('Formato de data inválida');
+  return createFailedMessage('Formato de data inválido');
 }
 
 function createButtonSubmit() {
@@ -153,7 +225,9 @@ function submitButtonClick(event) {
   verifyEmail();
   verifyCPF();
   verifyAdress();
+  verifyCity();
   verifyState();
+  typeOfHome();
   verifyAbstract();
   verifyLastJob();
   verifyDate();
@@ -176,11 +250,13 @@ function createClearButton() {
 function clearButtonClick(event) {
   const inputs = document.querySelectorAll('input');
   const resultado = document.getElementById('sessao-resultado');
+  const resumo = document.getElementById('texto-resumo');
   event.preventDefault();
   resultado.innerHTML = '';
   for (const input of inputs) {
     input.value = '';
   }
+  resumo.value = '';
 }
 
 function clearButtonExec() {
@@ -189,6 +265,8 @@ function clearButtonExec() {
 }
 
 window.onload = () => {
+  /* justValidateRun();
+  justMessages(); */
   createClearButton();
   clearButtonExec();
   createButtonSubmit();

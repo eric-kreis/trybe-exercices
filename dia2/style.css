@@ -1,5 +1,7 @@
 html {
   height: 100%;
+  width: 100%;
+  background-color: white;
 }
 
 main {
@@ -14,11 +16,12 @@ h1 {
 }
 
 form {
-  border: 1px solid rgb(214, 206, 206);
   width: 50%;
+  min-width: 400px;
   margin: auto;
   padding: 2%;
   margin-bottom: 2%;
+  background-color: whitesmoke;
 }
 
 fieldset {
@@ -38,6 +41,7 @@ fieldset {
   margin-top: 0;
   width: 40%;
   min-width: 40%;
+  background-color: whitesmoke;
 }
 
 div {
@@ -73,7 +77,16 @@ textarea {
   font-size: large;
 }
 
-
 #sessao-resultado div {
   line-height: 30px;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    flex-wrap: wrap;
+  }
+  #resultado {
+    min-width: 400px;
+  }
 }
