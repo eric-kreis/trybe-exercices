@@ -10,6 +10,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  font-size: larger;
 }
 
 header ul {
@@ -22,16 +23,11 @@ header li {
 
 .asides {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: larger;
 }
 
-.aside-one {
-  text-align: center;
-}
-
-.aside-two {
+.asides h2 {
   text-align: center;
 }
 
@@ -46,17 +42,23 @@ header li {
 }
 
 article {
-  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-left: 150px;
+  padding-right: 150px;
+  font-size: larger;
 }
 
 article h1 {
   margin-top: 0;
   text-align: center;
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 footer {
-  padding: 20px;
+  padding-left: 150px;
+  padding-right: 150px;
+  font-size: medium;
 }
 
 footer h3 {
