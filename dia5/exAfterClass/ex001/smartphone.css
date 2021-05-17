@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  margin: 10px;
+}
+h1 {
+  font-size: x-large;
+}
+h2 {
+  font-size: large;
+}
+
+p {
+  font-size: large;
+  text-align: justify;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  font-size: x-large;
+  margin-bottom: 30px;
+}
+
+figure:last-of-type {
+  margin-bottom: 0;
+}

@@ -1,0 +1,27 @@
+body {
+  background-color: whitesmoke;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
+}
+
+p {
+  font-size: larger;
+}
+
+.figure-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+figure {
+  margin: 10px;
+  font-size: larger;
+  width: 40%;
+}

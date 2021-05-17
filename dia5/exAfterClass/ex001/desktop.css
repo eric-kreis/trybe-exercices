@@ -1,0 +1,25 @@
+body {
+  background-color: azure;
+}
+
+h1 {
+  font-size: 40px
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  margin: auto;
+  width: 65%;
+  font-size: x-large;
+  margin-bottom: 20px;
+}
+
+figure {
+  margin: 20px;
+  width: 25%;
+  font-size: x-large;
+  flex-grow: 1;
+}

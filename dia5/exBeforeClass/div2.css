@@ -1,0 +1,3 @@
+.card:nth-of-type(2) {
+  display: flex;
+}

@@ -1,0 +1,69 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: justify;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header li {
+  display: inline-block;
+}
+
+.asides {
+  display: flex;
+  /* flex-wrap: wrap; */
+  padding: 20px;
+  justify-content: center;
+  font-size: larger;
+}
+
+.aside-one {
+  margin-right: 20px;
+}
+
+.aside-two {
+  margin-left: 20px;
+}
+
+.asides h2 {
+  text-align: center;
+}
+
+.asides ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.asides ul li { 
+  margin-bottom: 20px;
+}
+
+article {
+  padding: 20px;
+}
+
+article h1 {
+  margin-top: 0;
+  text-align: center;
+  font-size: x-large;
+}
+
+footer {
+  padding: 20px;
+}
+
+footer h3 {
+  text-align: center;
+}
