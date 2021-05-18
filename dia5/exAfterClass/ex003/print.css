@@ -1,0 +1,25 @@
+#header {
+  display: none;
+}
+
+#navigation {
+  display: none;
+}
+
+#content-container {
+  float: none;
+}
+
+#content {
+  float: none;
+}
+
+#footer {
+  display: none;
+}
+
+#aside  {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
