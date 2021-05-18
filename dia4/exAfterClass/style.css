@@ -6,12 +6,13 @@ body {
 }
 
 h1 {
-  margin-top: 0;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
 .edit-bar {
   position: absolute;
+  top: 10px;
   left: -178px;
   width: 200px;
   font-size: larger;
@@ -133,11 +134,16 @@ h1 {
   display: inline-block;
 }
 
+#top-articles {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
 article {
-  display: inline-block;
-  width: 40%;
-  margin-right: 20px;
-  vertical-align: top;
+  width: 45%;
 }
 
 .content {
