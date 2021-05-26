@@ -50,9 +50,10 @@ const gameActions = {
     dragon.healthPoints -= warrior.damage;
   },
   mageTurn: (callback) => {
-    const mageDmg = callback(randomMinMaxNumber, mage);
-    mage.damage = mageDmg;
-    mage.mana -= 15;
+    const mageStats = callback();
+    const { manaSpent } = mageStats;
+    mage.damage = mageStats.damage;
+    mage.mana -= manaSpent;
     dragon.healthPoints -= mage.damage;
   },
   dragonTurn: (callback) => {
@@ -65,6 +66,6 @@ const gameActions = {
 };
 
 gameActions.warriorTurn(warriorDamage);
-gameActions.mageTurn(mageDamege);
+gameActions.mageTurn(returnDmgMana);
 gameActions.dragonTurn(dragonDamage);
 gameActions.returnMembers();
