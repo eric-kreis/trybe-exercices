@@ -1,7 +1,7 @@
 const mage = {
   healthPoints: 130,
   intelligence: 45,
-  mana: 15,
+  mana: 125,
   damage: undefined,
 };
 
@@ -42,9 +42,29 @@ const returnDmgMana = () => {
   return mageStats;
 };
 
-dragon.damage = dragonDamage(randomMinMaxNumber, dragon);
-warrior.damage = warriorDamage(randomMinMaxNumber, warrior);
+const gameActions = {
+  // Crie as HOFs neste objeto.
+  warriorTurn: (callback) => {
+    const warriorDmg = callback(randomMinMaxNumber, warrior);
+    warrior.damage = warriorDmg;
+    dragon.healthPoints -= warrior.damage;
+  },
+  mageTurn: (callback) => {
+    const mageDmg = callback(randomMinMaxNumber, mage);
+    mage.damage = mageDmg;
+    mage.mana -= 15;
+    dragon.healthPoints -= mage.damage;
+  },
+  dragonTurn: (callback) => {
+    const dragonDmg = callback(randomMinMaxNumber, dragon);
+    dragon.damage = dragonDmg;
+    warrior.healthPoints -= dragon.damage;
+    mage.healthPoints -= dragon.damage;
+  },
+  returnMembers: () => console.log(battleMembers),
+};
 
-console.log(dragon);
-console.log(warrior);
-console.log(returnDmgMana());
+gameActions.warriorTurn(warriorDamage);
+gameActions.mageTurn(mageDamege);
+gameActions.dragonTurn(dragonDamage);
+gameActions.returnMembers();
