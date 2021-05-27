@@ -113,7 +113,8 @@ const expected02 = [
 function nameAndAge() {
   let namesOrderedByAge;
   namesOrderedByAge = books.map((book) => (
-    { age: book.releaseYear - book.author.birthYear,
+    { 
+      age: book.releaseYear - book.author.birthYear,
       author: book.author.name,
     }
   ));
@@ -158,8 +159,9 @@ const expected03 = [
 
 function fantasyOrScienceFiction() {
   let fantasyOrScienceBooks;
-  fantasyOrScienceBooks = books.filter(((book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia'));
-
+  fantasyOrScienceBooks = books.filter(((book) => 
+  book.genre === 'Ficção Científica' || book.genre === 'Fantasia'
+  ));
   return fantasyOrScienceBooks;
 }
 
@@ -209,7 +211,9 @@ const expected05 = [
 ];
 
 function fantasyOrScienceFictionAuthors() {
-  const scienceOrFantasyBooks = books.filter((book) => book.genre === 'Ficção Científica' || book.genre === 'Fantasia');
+  const scienceOrFantasyBooks = books.filter((book) => 
+  book.genre === 'Ficção Científica' || book.genre === 'Fantasia'
+  );
   const onlyNames = scienceOrFantasyBooks.map((book) => book.author.name);
   onlyNames.sort();
   return onlyNames;
