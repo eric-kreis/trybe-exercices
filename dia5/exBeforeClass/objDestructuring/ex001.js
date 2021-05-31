@@ -1,5 +1,3 @@
-// Without Object Destructuring.
-
 const product = {
   name: 'Smart TV Crystal UHD',
   price: '1899.05',
@@ -8,4 +6,9 @@ const product = {
 
 const keys = Object.keys(product);
 
-keys.forEach((key) => console.log(product[key]));
+keys.map((key) => console.log(product[key]));
+
+// Object Destructuring.
+
+const { name, seller } = product;
+console.log(`${name}, ${seller}.`);
