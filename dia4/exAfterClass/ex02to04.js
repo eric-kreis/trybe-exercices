@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { Console } = require('console');
 
 const books = [
   {
@@ -82,12 +81,12 @@ const expected02real = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Fra
 function reduceNames() {
   const names = books.reduce((acc, book, index) => {
     if (index === books.length - 1) {
-      return `${acc}${book.author.name}.`;
+      return `${acc} ${book.author.name}.`;
     }
-    return `${acc}${book.author.name}, `;
+    return `${acc} ${book.author.name},`;
   }, '');
-  
-  return names;
+
+  return names.trim();
 }
 
 assert.strictEqual(reduceNames(), expected02real);
@@ -96,8 +95,9 @@ assert.strictEqual(reduceNames(), expected02real);
 const expected03 = 43;
 
 function averageAgeWhenBook() {
-  const ages = books.map(book => book.releaseYear - book.author.birthYear);
-  const agesSum = ages.reduce((acc, curr) => acc + curr);
+  const agesSum = books.reduce((acc, curr) => {
+    return acc + (curr.releaseYear - curr.author.birthYear)
+  }, 0);
   const average = agesSum / books.length;
   return average;
 }
