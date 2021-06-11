@@ -1,4 +1,4 @@
-describe('Exercício 02', () => {
+describe('Exercício 02 - Primeira Parte', () => {
   const myRemove = require('../exercices/ex002');
 
   it('Test if "myRemove" returns the expected Array', () => {

@@ -1,4 +1,4 @@
-describe('Exercício 04', () => {
+describe('Exercício 04 - Primeira Parte', () => {
   const myFizzBuzz = require('../exercices/ex004');
 
   it('Test if "myFizzBuzz" returns the expected if the paramater was divisible per 3 and 5', () => {

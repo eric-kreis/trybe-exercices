@@ -1,4 +1,4 @@
-describe('Exercício 01', () => {
+describe('Exercício 01 - Primeira Parte', () => {
   const sum = require('../exercices/ex001');
 
   it('Test if sum has error when "typeof" a parameter stills not a number', () => {

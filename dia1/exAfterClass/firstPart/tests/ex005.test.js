@@ -1,4 +1,4 @@
-describe('Exercício 05', () => {
+describe('Exercício 05 Primeira Parte', () => {
   const { obj1, obj2, obj3 } = require('../exercices/ex005');
 
   it('Verify if "obj1" is equal to "obj2"', () => {

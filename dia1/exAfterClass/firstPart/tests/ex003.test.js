@@ -1,4 +1,4 @@
-describe('Exercício 03', () => {
+describe('Exercício 03 - Primeira Parte', () => {
   const myRemoveWithoutCopy = require('../exercices/ex003');
 
   it('Test if "myRemoveWithoutCopy" return the expected array', () => {
