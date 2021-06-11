@@ -1,5 +1,5 @@
 describe('Exercício 01 - Segunda Parte', () => {
-  const { encode, decode } = require('./ex001');
+  const { encode, decode } = require('../exercices/ex001');
 
   it('Test if "encode" is a function', () => {
     expect(typeof (encode)).toBe('function');
@@ -60,4 +60,5 @@ describe('Exercício 01 - Segunda Parte', () => {
     decode(name);
     expect(name).toBe('2r3c');
   });
+
 });

@@ -1,4 +1,4 @@
-const techList = require('./ex002');
+const techList = require('../exercices/ex002');
 
 describe('Testa a função techList', () => {
   it('Testa se a função techList é definida', () => {
