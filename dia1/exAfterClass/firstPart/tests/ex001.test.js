@@ -1,5 +1,5 @@
 describe('Exercício 01', () => {
-  const sum = require('../ex001');
+  const sum = require('../exercices/ex001');
 
   it('Test if sum has error when "typeof" a parameter stills not a number', () => {
     expect(() => { sum('1', 2) }).toThrow();
@@ -14,4 +14,5 @@ describe('Exercício 01', () => {
     expect(9).toBe(sum(4, 5));
     expect(sum(0, 0)).toBe(0);
   });
+
 });

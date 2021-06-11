@@ -1,5 +1,5 @@
 describe('Exercício 05', () => {
-  const { obj1, obj2, obj3 } = require('../ex005');
+  const { obj1, obj2, obj3 } = require('../exercices/ex005');
 
   it('Verify if "obj1" is equal to "obj2"', () => {
     expect(obj1).toEqual(obj2);
@@ -9,4 +9,5 @@ describe('Exercício 05', () => {
     expect(obj1).not.toEqual(obj3);
     expect(obj2).not.toEqual(obj3);
   });
+
 });

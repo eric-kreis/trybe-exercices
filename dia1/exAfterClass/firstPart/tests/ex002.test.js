@@ -1,5 +1,5 @@
 describe('Exercício 02', () => {
-  const myRemove = require('../ex002');
+  const myRemove = require('../exercices/ex002');
 
   it('Test if "myRemove" returns the expected Array', () => {
     expect([1, 2, 4]).toEqual(myRemove([1, 2, 3, 4], 3));
@@ -15,4 +15,5 @@ describe('Exercício 02', () => {
     myRemove(list, 3);
     expect(list).toEqual([1, 3, 5, 6]);
   });
+
 });

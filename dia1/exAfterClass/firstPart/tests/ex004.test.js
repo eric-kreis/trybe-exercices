@@ -1,5 +1,5 @@
 describe('Exercício 04', () => {
-  const myFizzBuzz = require('../ex004');
+  const myFizzBuzz = require('../exercices/ex004');
 
   it('Test if "myFizzBuzz" returns the expected if the paramater was divisible per 3 and 5', () => {
     expect(myFizzBuzz(15)).toBe('fizzbuzz');
@@ -20,4 +20,5 @@ describe('Exercício 04', () => {
   it('Test if "myFizzBuzz" returns false if the parameter was not a number', () => {
     expect(false).toBe(myFizzBuzz('2'));
   });
+
 });
