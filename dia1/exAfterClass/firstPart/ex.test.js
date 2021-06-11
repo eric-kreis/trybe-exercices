@@ -3,7 +3,7 @@ const { describe, it, expect } = require('@jest/globals');
 describe('Exercício 01', () => {
   const sum = require('./ex001');
 
-  it('Test if sum has error when "typeof" a parameter is not a number', () => {
+  it('Test if sum has error when "typeof" a parameter stills not a number', () => {
     expect(() => { sum('1', 2) }).toThrow();
   });
 
@@ -32,7 +32,7 @@ describe('Exercício 02', () => {
     expect(myRemove([1, 2, 3, 4], 3)).not.toEqual([1, 2, 3, 4]);
   });
 
-  it('Test if the parameter array in "myRemove" is the same', () => {
+  it('Test if the parameter array in "myRemove" stills the same', () => {
     const list = [1, 3, 5, 6];
     myRemove(list, 3);
     expect(list).toEqual([1, 3, 5, 6]);
@@ -54,7 +54,7 @@ describe('Exercício 03', () => {
     expect(myRemoveWithoutCopy([1, 2, 3, 4], 3)).not.toEqual([1, 2, 3, 4]);
   });
 
-  it('Test if the parameter array in "myRemoveWithoutCopy" is not the same', () => {
+  it('Test if the parameter array in "myRemoveWithoutCopy" was not the same', () => {
     const list = [1, 3, 5, 6];
     myRemoveWithoutCopy(list, 3);
     expect(list).not.toEqual([1, 3, 5, 6]);
@@ -62,5 +62,29 @@ describe('Exercício 03', () => {
 
   it('Test if "myRemoveWithoutCopy" return the expected array', () => {
     expect(myRemoveWithoutCopy([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
+  });
+});
+
+describe('Exercício 04', () => {
+  const myFizzBuzz = require('./ex004');
+
+  it('Test if "myFizzBuzz" returns the expected if the paramater was divisible per 3 and 5', () => {
+    expect(myFizzBuzz(15)).toBe('fizzbuzz');
+  });
+
+  it('Test if "myFizzBuzz" returns the expected if the paramater was divisible only per 3', () => {
+    expect(myFizzBuzz(9)).toBe('fizz');
+  });
+
+  it('Test if "myFizzBuzz" returns the expected if the paramater was divisible only per 5', () => {
+    expect(myFizzBuzz(10)).toBe('buzz');
+  });
+
+  it('Test if "myFizzBuzz" returns the expected if the paramater was not divisible only per 3 or 5', () => {
+    expect(7).toBe(myFizzBuzz(7));
+  });
+
+  it('Test if "myFizzBuzz" returns false if the parameter was not a number', () => {
+    expect(false).toBe(myFizzBuzz('2'));
   });
 });
