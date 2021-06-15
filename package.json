@@ -1,0 +1,23 @@
+{
+  "name": "trybe-exercices",
+  "version": "1.0.0",
+  "description": "====Sejam bem vindos ao meu repositório dos exercíciso da Trybe!====",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric-kreis/trybe-exercices.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eric-kreis/trybe-exercices/issues"
+  },
+  "homepage": "https://github.com/eric-kreis/trybe-exercices#readme",
+  "devDependencies": {
+    "jest": "^27.0.4"
+  }
+}
