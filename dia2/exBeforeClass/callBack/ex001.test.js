@@ -1,6 +1,6 @@
 // Callback done() do jest.
 
-test("Não deveria passar!", (done) => {
+test("Só passa de verdade com o done!", (done) => {
   setTimeout(() => {
     expect(10).toBe(10);
     done();
