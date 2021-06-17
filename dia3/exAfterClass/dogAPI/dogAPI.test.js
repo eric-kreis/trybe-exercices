@@ -32,8 +32,7 @@ describe('Exercício 06', () => {
   });
 
   it('Failed simulation from dog API', async () => {
-    script.randomDogPicture = jest
-    .fn()
+    script.randomDogPicture
     .mockImplementation(async () => {
       throw 'request failed';
     });
