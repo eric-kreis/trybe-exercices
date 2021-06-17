@@ -1,19 +1,23 @@
 {
   "name": "dia3",
   "version": "1.0.0",
-  "description": "",
+  "description": "====Sejam bem vindos ao meu repositório dos exercíciso da Trybe!====",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric-kreis/trybe-exercices.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/jest": "^26.0.23",
-    "jest": "^27.0.4"
+  "bugs": {
+    "url": "https://github.com/eric-kreis/trybe-exercices/issues"
   },
-  "dependencies": {
-    "node-fetch": "^2.6.1"
+  "homepage": "https://github.com/eric-kreis/trybe-exercices#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.23"
   }
 }

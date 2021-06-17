@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 jest.mock('node-fetch');
 
 describe('Exercício 06', () => {
-  fetch.mockImplementation( async () => {
+  fetch.mockImplementation(async () => {
     return {
       json: async () => {
         return {
@@ -20,8 +20,7 @@ describe('Exercício 06', () => {
   it('Success simulation from dog API', async () => {
     const { status } = await script.randomDogPicture();
     script.randomDogPicture = jest
-    .fn()
-    .mockImplementation(async () => {
+    .fn(async () => {
       return `request ${status}`;
     });
 

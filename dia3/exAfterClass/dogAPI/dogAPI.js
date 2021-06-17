@@ -7,4 +7,5 @@ const randomDogPicture = async () => {
   return apiJson;
 };
 
+
 module.exports = { randomDogPicture };

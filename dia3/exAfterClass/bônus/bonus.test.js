@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 jest.mock('node-fetch');
 
 describe('Exercício Bônus', () => {
+
   fetch.mockImplementation(async () => {
     return {
       json: async () => {
@@ -20,7 +21,7 @@ describe('Exercício Bônus', () => {
     expect.assertions(4);
 
     const simFetchJoke = jest.spyOn(bonus, 'fetchJoke')
-    expect(await simFetchJoke()).toEqual('What do you call an Argentinian with a rubber toe? Roberto');
+    await expect(simFetchJoke()).resolves.toEqual('What do you call an Argentinian with a rubber toe? Roberto');
     expect(simFetchJoke).toHaveBeenCalled();
     expect(simFetchJoke).toHaveBeenCalledTimes(1);
     expect(simFetchJoke).toHaveBeenCalledWith();
