@@ -1,14 +1,15 @@
-const script = require('./script1to5');
+const script = require('./untilFive');
 
 describe('Exercício 02', () => {
-  it('Teste se a função foi chamada, qual seu retorno e quantas vezes foi chamada.', () => {
+  it(`Crie uma nova implementação, que deve receber dois parâmetros e retornar a divisão do primeiro pelo segundo.
+    Essa implementação deve ocorrer uma única vez. Faça os testes necessários.`, () => {
     script.getRandomNumber = jest
     .fn()
     .mockImplementation((a, b) => a / b);
 
-    expect(script.getRandomNumber(4, 2)).toBe(2);
-    expect(script.getRandomNumber(10, 2)).toBe(5);
-
-    expect(script.getRandomNumber).toHaveBeenCalledTimes(2);
+    expect(script.getRandomNumber(10, 2)).toBe(5);  
+    expect(script.getRandomNumber).toHaveBeenCalled();
+    expect(script.getRandomNumber).toHaveBeenCalledTimes(1);
+    expect(script.getRandomNumber).toHaveBeenCalledWith(10, 2);
   });
 });

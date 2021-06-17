@@ -1,4 +1,4 @@
-const script = require('./script1to5');
+const script = require('./untilFive');
 
 describe('Exercício 01', () => {
   it('Teste se a função foi chamada, qual seu retorno e quantas vezes foi chamada.', () => {
