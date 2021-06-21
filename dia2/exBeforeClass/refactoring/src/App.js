@@ -32,8 +32,8 @@ function App() {
 
   return (
     <article>
-      <CreateAlbum album={album01} />
-      <CreateAlbum album={album02} />
+      <CreateAlbum album={ album01 } />
+      <CreateAlbum album={ album02 } />
     </article>
   );
 }
