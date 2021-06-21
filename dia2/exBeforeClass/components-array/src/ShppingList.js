@@ -5,4 +5,4 @@ const ShoppingList = list.map((item, index) => {
   return (<li key={ index }>{ item }</li>);
 });
 
-export default ShoppingList
+export default ShoppingList;
