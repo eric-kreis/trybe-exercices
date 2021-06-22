@@ -8,13 +8,13 @@ class Pokemon extends Component {
     const { value, measurementUnit } = averageWeight;
     return (
       <li className='Pokemon'>
-        <div>
+        <div className='About'>
           <p>{ name }</p>
           <p>{ type }</p>
           <p>Avarage Weight: { value }{ measurementUnit }</p>
         </div>
         <div>
-          <img src={ image } alt="pokemon" />
+          <img src={ image } alt='pokemon' />
         </div>
       </li>
     );

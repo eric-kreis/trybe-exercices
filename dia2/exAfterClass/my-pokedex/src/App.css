@@ -1,3 +1,8 @@
+body {
+  background-image: url('./img/wallpaper.jpeg');
+  background-repeat: no-repeat;
+}
+
 .App {
   display: flex;
   flex-wrap: wrap;
@@ -20,8 +25,13 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-color: whitesmoke;
 }
 
 .App * {
   flex-grow: 1;
+}
+
+.About {
+  text-align: center;
 }
