@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.Pokemon {
+  margin: 5px 5px 5px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.App * {
+  flex-grow: 1;
+}
