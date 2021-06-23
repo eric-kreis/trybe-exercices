@@ -7,27 +7,66 @@ class App extends React.Component {
     this.javaScript = this.javaScript.bind(this);
     this.python = this.python.bind(this);
     this.typeScript = this.typeScript.bind(this);
+    this.changeColor = this.changeColor.bind(this);
+
+    this.state = {
+      clicksJS: 0,
+      clicksPY: 0,
+      clicksTS: 0,
+      bgColorJS: 'whitesmoke',
+      bgColorPY: 'whitesmoke',
+      bgColorTS: 'whitesmoke',
+    }
   }
 
-  javaScript() {
-    return console.log('JavaScript');
+  changeState = (clickState) => {
+    this.setState({
+      [clickState]: this.state[clickState] + 1
+    });
   }
 
-  python() {
-    return console.log('Python');
+  changeColor(clickState ,bgState) {
+    if (this.state[clickState] % 2 === 0){
+      this.setState({
+        [bgState]: 'green',
+      });
+    } else {
+      this.setState({
+        [bgState]: 'whitesmoke',
+      });
+    }
   }
 
-  typeScript() {
-    return console.log('TypeScript');
+  javaScript(color) {
+    this.changeState('clicksJS');
+    this.changeColor('clicksJS', 'bgColorJS');
+    console.log(color);
+  }
+
+  python(color) {
+    this.changeState('clicksPY');
+    this.changeColor('clicksPY', 'bgColorPY');
+    console.log(color);
+  }
+
+  typeScript(color) {
+    this.changeState('clicksTS');
+    this.changeColor('clicksTS', 'bgColorTS');
+    console.log(color);
   }
   
   render() {
     return (
-      <div>
-        <button onClick={ this.javaScript }>JavaScript</button>
-        <button onClick={ this.python }>Python</button>
-        <button onClick={ this.typeScript }>TypeScript</button>
-      </div>
+      <>
+        <button style={{ backgroundColor: this.state.bgColorJS }} 
+          onClick={() => { this.javaScript(this.state.bgColorJS) } }>JavaScript</button>
+
+        <button style={{ backgroundColor: this.state.bgColorPY }}
+          onClick={() => { this.python(this.state.bgColorPY) } }>Python</button>
+
+        <button style={{ backgroundColor: this.state.bgColorTS }}
+          onClick={() => { this.typeScript(this.state.bgColorTS) } }>TypeScript</button>
+      </>
     );
   }
 }
