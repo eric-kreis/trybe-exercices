@@ -4,51 +4,33 @@ import Option from './Option';
 class Form extends Component {
   constructor() {
     super();
-    this.selectChange = this.selectChange.bind(this);
-    this.textChange = this.textChange.bind(this);
-    this.emailChange = this.emailChange.bind(this);
-    this.textareaChange = this.textareaChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       select: '',
       text: '',
       email: '',
       textarea: '',
+      checkbox: false,
     }
   }
 
-  selectChange(event) {
-    this.setState({
-      select: event.target.value,
-    });
-  }
-
-  textChange(event) {
-    this.setState({
-      text: event.target.value,
-    });
-  }
-
-  emailChange(event) {
-    this.setState({
-      email: event.target.value,
-    });
-  }
-
-  textareaChange(event) {
-    this.setState({
-      textarea: event.target.value,
-    });
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({ [name]: value });
   }
 
   render() {
-    const { select, text, email, textarea } = this.state;
 
     return (
       <form className='forms'>
         <label>
           Qual sua tecnologia preferida:
-          <select value={ select } onChange={ this.selectChange }>
+          <select
+            onChange={ this.handleChange }
+            name='select'
+          >
             <Option value='Selecione uma Tecnologia' />
             <Option value='HTML 5' />
             <Option value='CSS 3' />
@@ -58,15 +40,34 @@ class Form extends Component {
         </label>
         <label>
           Qual seu nome?
-          <input type="text" value={ text } onChange={ this.textChange }></input>
+          <input
+            type="text"
+            name='text'
+            onChange={ this.handleChange }
+          ></input>
         </label>
         <label>
           Digite seu email:
-          <input type="email" value={ email } onChange={ this.emailChange }></input>
+          <input
+            type="email"
+            name='email'
+            onChange={ this.handleChange }
+          ></input>
         </label>
         <label>
           Justifique os motivos da escolha:
-          <textarea value={ textarea } onChange={ this.textareaChange }></textarea>
+          <textarea
+            name='textarea'
+            onChange={ this.handleChange }
+          ></textarea>
+        </label>
+        <label>
+          Marque se você já estudou todas
+          <input
+            type="checkbox"
+            name="checkbox"
+            onChange={ this.handleChange }
+          ></input>
         </label>
       </form>
     );
