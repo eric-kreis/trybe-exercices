@@ -17,19 +17,27 @@ h1 {
 }
 
 .forms {
-  width: 500px;
+  width: 600px;
   height: 300px;
   margin: auto;
   display: flex;
   text-align: center;
   flex-flow: column;
-  padding: 10px;
   background-color: gray;
   justify-content: space-around;
   align-items: center;
   border-radius: 15px;
 }
 
+.forms label {
+  display: flex;
+}
+
+.forms fieldset {
+  width: 90%;
+}
+
 .forms input, textarea {
-  width: 100%;
+  margin-left: 10px;
+  width: 52%;
 }
