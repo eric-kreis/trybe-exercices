@@ -29,8 +29,9 @@ class Button extends React.Component {
 
   render() {
     const { name } = this.props
+    const { backgroundColor } = this.state;
 
-    return <button onClick={ this.handleChange } style={{backgroundColor: this.state.backgroundColor}}>{ name }</button>;
+    return <button onClick={ this.handleChange } style={{backgroundColor: backgroundColor}}>{ name }</button>;
   }
 }
 
