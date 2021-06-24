@@ -1,0 +1,1 @@
+Exercício Realizado após a aula está no repositório exercise-pokedex-state deste perfil.
