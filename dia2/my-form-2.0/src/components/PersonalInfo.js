@@ -11,7 +11,7 @@ class PersonalInfo extends React.Component {
     } = this.props
 
     return (
-        <>
+      <>
         <Input
           type='text'
           label='Nome'
