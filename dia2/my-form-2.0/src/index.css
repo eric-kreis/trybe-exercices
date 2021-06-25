@@ -54,6 +54,14 @@ legend {
   margin-bottom: 10px;
 }
 
+select:hover {
+  cursor: pointer;
+}
+
+.form-check-input:hover, .form-check-label:hover {
+  cursor: pointer;
+}
+
 .result-container {
   background-color: white;
   width: 600px;

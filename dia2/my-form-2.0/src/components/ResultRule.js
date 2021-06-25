@@ -5,14 +5,15 @@ class ResultRule extends React.Component {
   render() {
     const { state } = this.props;
 
-    return (
-      (state.submitted ?
+    if (state.submitted) {
+      return (
         <div className="result-container">
           <h1>Informações Enviadas</h1>
           <Result objState={ state } />
-        </div> : <></>
-      )
-    );
+        </div>
+      );
+    }
+    return <></>
   }
 }
 

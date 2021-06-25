@@ -5,7 +5,7 @@ class Residence extends React.Component {
     const { handleChange, checkedState } = this.props;
 
     return (
-      <label>
+      <div>
         Selecione residência:
         <div className="form-check">
           <input
@@ -31,7 +31,7 @@ class Residence extends React.Component {
           />
           <label htmlFor="apartamento" className="form-check-label">Apartamento</label>
         </div>
-      </label>
+      </div>
     );
   }
 }

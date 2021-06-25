@@ -1,22 +1,26 @@
 import React from 'react';
 
 class Result extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = props.objState
+  }
+
   render() {
-    const { objState } = this.props;
-    const names = Object.keys(objState);
+    const names = Object.keys(this.state);
 
     names.splice(names.indexOf('alert'), 2);
 
     return (
       names.map((name) => {
         if (name === 'select'){
-          return <p key={ name }>ESTADO: {objState[name]}</p>
+          return <p key={ name }>ESTADO: {this.state[name]}</p>
         } if (name === 'checked') {
-          return <p key={ name }>RESIDÊNCIA: { objState[name] }</p>;
+          return <p key={ name }>RESIDÊNCIA: { this.state[name] }</p>;
         } if (name === 'cargoDesc') {
-          return <p key={ name }>DESCRIÇÃO: { objState[name] }</p>;
+          return <p key={ name }>DESCRIÇÃO: { this.state[name] }</p>;
         }
-        return  <p key={ name } >{name.toUpperCase()}: { objState[name] }</p>;
+        return  <p key={ name } >{name.toUpperCase()}: { this.state[name] }</p>;
       })
     );
   }
