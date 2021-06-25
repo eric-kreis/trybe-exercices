@@ -43,12 +43,21 @@ class App extends React.Component {
   }
 
   handleBlur({ target }) {
-    if (target.value.match(/^\d/) && target.name === 'cidade') {
-      return this.setState({ [target.name]: '' }, () => target.value = '');
-    } if (target.value.match(/\S+@\S+\.\S+/) && target.name === 'email') {
-      this.setState({ [target.name]: target.value });
-    } else {
-      alert('email inválido')
+    if(target.name === 'cidade') {
+      if (target.value.match(/^\d/) || target.value === '') {
+        this.setState({
+          [target.name]: '' 
+        }, () => target.value = '');
+        alert('Cidade inválida');
+      }
+    }
+    if (target.name === 'email') {
+      if (target.value.match(/\S+@\S+\.\S+/)) {
+        this.setState({ [target.name]: target.value });
+      } else {
+        this.setState({ [target.name]: '' });
+        alert('E-mail inválido');
+      }
     }
   }
 
@@ -61,10 +70,19 @@ class App extends React.Component {
     }));
   }
 
-  handleSubmit(event) {
-    alert('Formulário enviado com sucesso');
-    event.preventDefault();
-    this.setState({ submitted: true });
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const states = Object.keys(this.state);
+    const situation = states
+      .some((state) => this.state[state] === '');
+
+    if (situation) {
+      return;
+    } else {
+      alert('Formulário enviado com sucesso');
+      this.setState({ submitted: true });
+    }
   }
 
   handleReset() {

@@ -4,23 +4,19 @@ class Result extends React.Component {
   render() {
     const { objState } = this.props;
     const names = Object.keys(objState);
-    names.splice(names.indexOf('alert'));
-    names.splice(names.indexOf('submitted'));
+
+    names.splice(names.indexOf('alert'), 2);
 
     return (
       names.map((name) => {
         if (name === 'select'){
-          return (
-          <p key={ name }>
-            estado: {objState[name]}
-          </p>
-          );
+          return <p key={ name }>ESTADO: {objState[name]}</p>
         } if (name === 'checked') {
-          return <p key={ name }>residência: { objState[name] }</p>;
+          return <p key={ name }>RESIDÊNCIA: { objState[name] }</p>;
         } if (name === 'cargoDesc') {
-          return <p key={ name }>descrição do cargo: { objState[name] }</p>;
+          return <p key={ name }>DESCRIÇÃO: { objState[name] }</p>;
         }
-        return  <p key={ name }>{name}: { objState[name] }</p>;
+        return  <p key={ name } >{name.toUpperCase()}: { objState[name] }</p>;
       })
     );
   }
