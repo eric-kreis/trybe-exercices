@@ -1,19 +1,23 @@
 import React from 'react';
+import Select from './Select';
 import Option from './Option';
+import Input from './Input';
 
 class Form extends React.Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTest = this.handleTest.bind(this);
     this.fileInput = React.createRef();
 
     this.state = {
       select: '',
-      text: '',
+      name: '',
       email: '',
       textarea: '',
       checkbox: false,
+      formularioComErros: true,
     }
   }
 
@@ -21,6 +25,21 @@ class Form extends React.Component {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({ [name]: value });
+  }
+
+  handleTest() {
+    const { select,  name, email, textarea } = this.state;
+
+    const tests = [
+      !select.length,
+      !name.length,
+      !email.match(/^\S+@\S+$/i),
+      !textarea.length,
+    ];
+
+    const formsCompleted = tests.every((test) => test !== true);
+
+    this.setState({ formularioComErros: !formsCompleted });
   }
 
   handleSubmit(event) {
@@ -41,8 +60,8 @@ class Form extends React.Component {
           <legend>Tecnologia favorita</legend>
           <label>
             Qual sua tecnologia favorita:
-            <select
-              onChange={ this.handleChange }
+            <Select
+              handle={ this.handleChange }
               name='select'
             >
               <Option value='Selecione uma Tecnologia' />
@@ -50,33 +69,29 @@ class Form extends React.Component {
               <Option value='CSS 3' />
               <Option value='JavaScript' />
               <Option value='React' />
-            </select>
+            </Select>
           </label>
 
-          <label>
-            Qual seu nome?
-            <input
-              type="text"
-              name='text'
-              onChange={ this.handleChange }
-            ></input>
-          </label>
+          <Input
+            label='Qual seu nome?'
+            type="text"
+            name='name'
+            handle={ this.handleChange }
+          />
 
-          <label>
-            Digite seu email:
-            <input
-              type="email"
-              name='email'
-              onChange={ this.handleChange }
-            ></input>
-          </label>
+          <Input
+            label='Digite seu email:'
+            type="email"
+            name='email'
+            handle={ this.handleChange }
+          />
 
           <label>
             Justifique os motivos da escolha:
             <textarea
               name='textarea'
               onChange={ this.handleChange }
-            ></textarea>
+            />
           </label>
 
           <label>
@@ -85,15 +100,15 @@ class Form extends React.Component {
               type="checkbox"
               name="checkbox"
               onChange={ this.handleChange }
-            ></input>
+            />
           </label>
-
+          
           <label>
             <input
               type='file'
               ref={ this.fileInput }
-            ></input>
-          </label>
+            />
+          </label>  
 
           <button type='submit'>Enviar</button>
 
