@@ -1,0 +1,17 @@
+// Exercício 10: Pule 5 documentos e exiba os atributos _id, title, authors e status dos livros com o status = "MEAP", limitando-se a 10 documentos;
+
+use('first_day');
+
+db.books.find(
+  {
+    status: { $ne: 'PUBLISH' }
+  },
+  {
+    title: true,
+    authors: true,
+    status: true,
+    _id: false,
+  }
+)
+.skip(5)
+.limit(10);

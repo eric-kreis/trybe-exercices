@@ -1,0 +1,5 @@
+// Exercício 9: Exiba os atributos title, isbn e pageCount dos 3 primeiros livros. NÃO retorne o atributo _id.
+
+use('first_day');
+
+db.books.find(null, { title: 1, isbn: 1, pageCount: 1, _id: 0 }).limit(3);

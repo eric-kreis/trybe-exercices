@@ -1,0 +1,6 @@
+// Exercício 3 : Retorne apenas os atributos name e birth do documento com o _id igual a 8;
+
+db.bios.findOne(
+  { _id: 8 },
+  { _id: false, name: true, birth: true }
+);

@@ -1,0 +1,3 @@
+// Exercício 7: Retorne a quantidade de documentos da coleção books;
+use('first_day');
+db.books.count();
