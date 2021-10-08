@@ -1,0 +1,6 @@
+use("class");
+db.movies.find({
+  $text: {
+    $search: "vacation",
+  },
+});
