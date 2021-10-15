@@ -1,8 +1,0 @@
-use("class");
-db.xmen.updateMany(
-  { occupation: "Junior Staff", areas: { $exists: 0 } },
-  {
-    $currentDate: { lastUpdate: { $type: "timestamp" } },
-    $set: { areas: ["Outside"] },
-  },
-);

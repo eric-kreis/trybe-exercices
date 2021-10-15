@@ -1,2 +1,0 @@
-use("class");
-db.movies.createIndex({ description: "text" });

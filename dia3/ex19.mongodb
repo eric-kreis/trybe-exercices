@@ -1,4 +1,0 @@
-use("class");
-db.movies.find({
-  description: { $regex: /humanity.$/ },
-});
