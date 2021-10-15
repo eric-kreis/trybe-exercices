@@ -1,0 +1,6 @@
+db.restaurants.find({
+  $nor: [
+    { rating: 1 },
+    { cuisine: 'American' },
+  ],
+}).count();

@@ -1,0 +1,7 @@
+db.restaurants.find({
+  rating: { $gt: 6, $lt: 10 },
+  $or: [
+    { borough: 'Brooklyn' },
+    { cuisine: { $ne: 'Delicatessen' } },
+  ],
+}).count();
