@@ -1,4 +1,5 @@
-// Exercício 8: Conte quantos livros existem com o status = "PUBLISH";
-
-use('first_day');
-db.books.find({ status: 'PUBLISH' }).count();
+use("class");
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $min: { budget: 5 } },
+);

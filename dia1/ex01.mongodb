@@ -1,3 +1,5 @@
-// Exercício 1 : Retorne o documento com o _id igual a 8;
-
-db.bios.findOne({ _id: 8 });
+use("class");
+db.movies.updateOne(
+  { title: "Batman" },
+  { $set: { imdbRating: 7.7 } },
+);

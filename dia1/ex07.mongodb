@@ -1,3 +1,5 @@
-// Exercício 7: Retorne a quantidade de documentos da coleção books;
-use('first_day');
-db.books.count();
+use("class");
+db.movies.updateOne(
+  { title: "Batman" },
+  { $rename: { budget: "estimatedBudget" } },
+);

@@ -2,6 +2,8 @@ use("class");
 db.movies.updateOne(
   { title: "Home Alone" },
   {
-    $currentDate: { lastUpdated: { $type: "timestamp" } },
+    $push: {
+      ratings: { $each: [200, 99, 65] },
+    },
   },
 );
