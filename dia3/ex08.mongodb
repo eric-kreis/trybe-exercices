@@ -1,10 +1,9 @@
 use("class");
-db.movies.find(
+db.movies.updateOne(
+  { title: "Home Alone", ratings: { $gte: 64, $lte: 105, $mod: [9, 0] } },
   {
-    ratings: {
-      $elemMatch: { $gte: 64, $lte: 105 },
-      $mod: [9, 0],
-    },
+    $set: {
+      "ratings.$": 90,
+    }
   },
-  { _id: 0, title: 1, ratings: 1 },
 );
