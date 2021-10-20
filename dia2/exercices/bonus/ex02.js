@@ -31,15 +31,10 @@ const readUserFile = async () => {
 const askWordToChange = async () => {
   try {
     const file = await readUserFile();
-    const words = file.split(' ');
-    const questionFormat = words.map((word, index) => `[${index + 1}] - ${word}`).join('\n');
-    const selectedNumber = await question(`Digite um número para informar a palavra: \n${questionFormat}\n`);
-
-    if (!(+selectedNumber)) return console.log('[ERROR]: Não é um número!');
+    console.log(file);
+    const selectedNumber = await question('Digite a palavra que deseja substrituir: ')
     const newWord = await question('Digite a nova palavra: ');
-
-    words[+selectedNumber - 1] = newWord;
-    const newPhrase = words.join(' ');
+    const newPhrase = file.replace(new RegExp(selectedNumber, 'g'), newWord);
     console.log(`Resultado: ${newPhrase}`);
 
     const fileLocal = await question('Onde deseja salvar o arquivo (Escreva o tipo do arquivo também): ');
