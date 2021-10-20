@@ -1,6 +1,6 @@
 const readline = require('readline-sync');
 
-const getFibonacciSequence = (num, numbers = [0]) => {
+const getFibonacciSequence = (num, numbers = [1]) => {
   if (num > numbers.length) {
     if (numbers.length === 1) numbers.push(1);
     const nextValue = numbers[numbers.length - 1] + numbers[numbers.length - 2];
