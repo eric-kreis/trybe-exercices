@@ -11,11 +11,10 @@ const question = (message) => {
   // https://nodejs.org/api/readline.html#rlquestionquery-options-callback
   return new Promise((resolve) => {
     rl.question(message, (answer) => {
-      rl.close();
-  
       resolve(answer);
+      rl.close();
     });
-  })
+  });
 };
 
 const readUserFile = async () => {
