@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only examples/src/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only exercices/src/index.ts"
   },
   "dependencies": {
     "@types/body-parser": "^1.19.1",
