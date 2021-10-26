@@ -4,10 +4,11 @@
   "main": "index.js",
   "author": "Eric Kreis",
   "license": "MIT",
-  "script": {
+  "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
