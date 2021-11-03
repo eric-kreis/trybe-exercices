@@ -1,13 +1,12 @@
 import { Request, Response, Router } from 'express';
 import { users } from '..';
 import RegisterController from '../controllers/Register';
+import LoginController from '../controllers/Login';
 
 const user = Router();
 
-user.get('/all', (_req: Request, res: Response) => {
-  res.status(200).json(users);
-});
-
 user.post('/register', new RegisterController().handle);
+
+user.post('/login', new LoginController().handle);
 
 export default user;

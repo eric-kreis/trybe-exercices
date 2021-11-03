@@ -102,7 +102,7 @@ interface IUser {
 app.post('/signup', (req: Request, res: Response) => {
   const { email, password, firstName, phone }: IUser = req.body;
 
-  if (!email || !password || !password || !phone) {
+  if (!email || !password || !firstName || !phone) {
     return res.status(401).json({ message: 'missing fields' }); 
   }
 

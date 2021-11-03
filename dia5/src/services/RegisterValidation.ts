@@ -2,7 +2,7 @@ import IUser from '../interfaces/IUser';
 import IValidationService from '../interfaces/IValidationService';
 import { usernameValidation, emailValidation, passwordValidation} from '../utils';
 
-class ValidationService implements IValidationService {
+class RegisterValidation implements IValidationService {
   execute({ username, email, password }: IUser) {
     if (
       !username
@@ -17,4 +17,4 @@ class ValidationService implements IValidationService {
   }
 }
 
-export default ValidationService;
+export default RegisterValidation;
