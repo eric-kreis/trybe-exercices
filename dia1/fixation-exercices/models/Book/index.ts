@@ -23,5 +23,13 @@ export default {
     const [books] = await connection.execute<IDefaultBook[]>(query, [authorId]);
 
     return books.map(serialize);
-  }
+  },
+
+  async getByBookId(bookId: string): Promise<ISerealizedBook> {
+    const query = `SELECT id, title, author_id FROM books WHERE id=${bookId};`;
+
+    const [books] = await connection.execute<IDefaultBook[]>(query);
+
+    return books.map(serialize)[0];
+  },
 };

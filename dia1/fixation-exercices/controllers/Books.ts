@@ -15,4 +15,12 @@ export default {
 
     return res.status(200).json(books);
   },
+
+  async byBookId(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const book = await Book.getByBookId(id);
+
+    return res.status(200).json(book);
+  }
 };
