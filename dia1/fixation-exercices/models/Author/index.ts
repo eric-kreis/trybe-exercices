@@ -19,6 +19,14 @@ const newAuthor = (authorData: ISerializedAuthor): ICustomAuthor => ({
   ].filter((name) => name).join(' '),
 });
 
+const isValidAuthor = ({ firstName, middleName, lastName }: ISerializedAuthor) => {
+  if (!firstName || typeof firstName !== 'string') return false;
+  if (!lastName || typeof lastName !== 'string') return false;
+  if (middleName && typeof middleName !== 'string') return false;
+
+  return true;
+};
+
 const getAll = async (): Promise<ICustomAuthor[]> => {
   const [authors] = await connection.execute<IDefaultAuthor[]>(
     'SELECT id, first_name, middle_name, last_name FROM authors;'
@@ -27,6 +35,25 @@ const getAll = async (): Promise<ICustomAuthor[]> => {
   return authors.map(serialize).map(newAuthor);
 };
 
+const getById = async (authorId: number): Promise<ISerializedAuthor> => {
+  const [authors] = await connection.execute<IDefaultAuthor[]>(
+    'SELECT id, first_name, middle_name, last_name FROM authors WHERE id=?;',
+    [authorId],
+  );
+
+  return authors.map(serialize)[0];
+};
+
+const create = async ({ firstName, middleName, lastName }: ISerializedAuthor) => (
+  connection.execute(
+    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?);',
+    [firstName, middleName, lastName],
+  )
+);
+
 export default {
-  getAll
+  getAll,
+  getById,
+  isValidAuthor,
+  create,
 };

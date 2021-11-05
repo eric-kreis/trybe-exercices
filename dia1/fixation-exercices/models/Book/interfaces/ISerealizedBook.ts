@@ -1,5 +1,5 @@
 export default interface ISerealizedBook {
-  id: number,
+  id?: number,
   title: string,
   authorId: number
 }

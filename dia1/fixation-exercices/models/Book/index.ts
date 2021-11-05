@@ -32,4 +32,10 @@ export default {
 
     return books.map(serialize)[0];
   },
+
+  async createBook({ title, authorId }: ISerealizedBook) {
+    const query = 'INSERT INTO model_example.books (title, author_id) VALUES (?, ?);';
+
+    return connection.execute(query, [title, authorId]);
+  },
 };
