@@ -33,7 +33,7 @@ const create = async (req: Request, res: Response) => {
 
   await Book.createBook({ title, authorId });
 
-  res.status(200).json({ message: 'Livro criado com sucesso!' });
+  res.status(201).json({ message: 'Livro criado com sucesso!' });
 };
 
 export default {
