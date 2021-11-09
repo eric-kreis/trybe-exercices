@@ -1,13 +1,14 @@
+import { ObjectId } from 'bson';
 import connection from '../connection';
 import ICustomAuthor from './interfaces/ICustomAuthor';
 import IDefaultAuthor from './interfaces/IDefaultAuthor';
 import ISerializedAuthor from './interfaces/ISerializedAuthor';
 
 const serialize = (authorData: IDefaultAuthor): ISerializedAuthor => ({
-  id: authorData.id,
-  firstName: authorData.first_name,
-  middleName: authorData.middle_name,
-  lastName: authorData.last_name,
+  id: authorData._id,
+  firstName: authorData.firstName,
+  middleName: authorData.middleName,
+  lastName: authorData.lastName,
 });
 
 const newAuthor = (authorData: ISerializedAuthor): ICustomAuthor => ({
@@ -28,28 +29,36 @@ const isValidAuthor = ({ firstName, middleName, lastName }: ISerializedAuthor) =
 };
 
 const getAll = async (): Promise<ICustomAuthor[]> => {
-  const [authors] = await connection.execute<IDefaultAuthor[]>(
-    'SELECT id, first_name, middle_name, last_name FROM authors;'
-  );
+  const db = await connection();
+  const authors = await db.collection<IDefaultAuthor>('authors').find().toArray();
 
   return authors.map(serialize).map(newAuthor);
 };
 
-const getById = async (authorId: number): Promise<ISerializedAuthor> => {
-  const [authors] = await connection.execute<IDefaultAuthor[]>(
-    'SELECT id, first_name, middle_name, last_name FROM authors WHERE id=?;',
-    [authorId],
-  );
+const getById = async (authorId: string): Promise<ICustomAuthor | null> => {
+  if (!ObjectId.isValid(authorId)) return null;
 
-  return authors.map(serialize)[0];
+  const db = await connection();
+  const author = await db.collection<IDefaultAuthor>('authors')
+    .findOne(new ObjectId(authorId));
+
+  if (!author) return null;
+
+  return newAuthor(serialize(author));
 };
 
-const create = async ({ firstName, middleName, lastName }: ISerializedAuthor) => (
-  connection.execute(
-    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?);',
-    [firstName, middleName, lastName],
-  )
-);
+const create = async ({ firstName, middleName, lastName }: IDefaultAuthor): Promise<ICustomAuthor> => {
+  const db = await connection();
+  const add = await db.collection<IDefaultAuthor>('authors')
+    .insertOne({
+      _id: new ObjectId(),
+      firstName,
+      middleName,
+      lastName,
+    });
+
+  return newAuthor({ id: add.insertedId, firstName, middleName, lastName });
+};
 
 export default {
   getAll,

@@ -1,7 +1,7 @@
-import { RowDataPacket } from 'mysql2';
+import { ObjectId } from 'bson';
 
-export default interface IDefaultBook extends RowDataPacket {
-  id: number,
+export default interface IDefaultBook {
+  _id?: ObjectId,
   title: string,
-  author_id: number
+  authorId: ObjectId
 }

@@ -1,10 +1,10 @@
-import { RowDataPacket } from 'mysql2';
+import { ObjectId } from 'bson';
 
-export default interface IAuthor extends RowDataPacket {
-  id: number,
-  first_name: string,
-  middle_name?: string,
-  last_name: string,
-  birthdate?: string,
-  nationality: string
+export default interface IDefaultAuthor {
+  _id?: ObjectId;
+  firstName: string;
+  middleName?: string;
+  lastName: string;
+  birthday ?: string;
+  nationality?: string;
 }

@@ -1,41 +1,45 @@
+import { ObjectId } from 'bson';
 import connection from '../connection';
 import IDefaultBook from './interfaces/IDefaultBook';
-import ISerealizedBook from './interfaces/ISerealizedBook';
-
-const serialize = (booksData: IDefaultBook): ISerealizedBook => ({
-  id: booksData.id,
-  title: booksData.title,
-  authorId: booksData.author_id,
-});
 
 export default {
-  async getAll(): Promise<ISerealizedBook[]> {
-    const [books] = await connection.execute<IDefaultBook[]>(
-      'SELECT id, title, author_id FROM books;'
-    );
+  async getAll(): Promise<IDefaultBook[]> {
+    const db = await connection();
+    const booksCollection = db.collection<IDefaultBook>('books');
+    const books = await booksCollection.find().toArray();
 
-    return books.map(serialize);
+    return books;
   },
 
-  async getByAuthorId(authorId: string): Promise<ISerealizedBook[]> {
-    const query = 'SELECT id, title, author_id FROM books WHERE author_id=?;';
+  async getByAuthorId(authorId: string): Promise<IDefaultBook[] | null> {
+    if (!ObjectId.isValid(authorId)) return null;
 
-    const [books] = await connection.execute<IDefaultBook[]>(query, [authorId]);
+    const db = await connection();
+    const booksCollection = db.collection<IDefaultBook>('books');
+    const books = await booksCollection.find({ authorId: new ObjectId(authorId) }).toArray();
 
-    return books.map(serialize);
+    if (!books) return null;
+
+    return books;
   },
 
-  async getByBookId(bookId: string): Promise<ISerealizedBook> {
-    const query = `SELECT id, title, author_id FROM books WHERE id=${bookId};`;
+  async getByBookId(bookId: string): Promise<IDefaultBook | null> {
+    if (!ObjectId.isValid(bookId)) return null;
 
-    const [books] = await connection.execute<IDefaultBook[]>(query);
+    const db = await connection();
+    const booksCollection = db.collection<IDefaultBook>('books');
+    const book = await booksCollection.findOne({ _id: new ObjectId(bookId) });
 
-    return books.map(serialize)[0];
+    if (!book) return null;
+
+    return book;
   },
 
-  async createBook({ title, authorId }: ISerealizedBook) {
-    const query = 'INSERT INTO model_example.books (title, author_id) VALUES (?, ?);';
+  async createBook({ title, authorId }: { title: string, authorId: string }): Promise<IDefaultBook> {
+    const db = await connection();
+    const booksCollection = db.collection<IDefaultBook>('books');
+    const book = await booksCollection.insertOne({ title, authorId: new ObjectId(authorId) });
 
-    return connection.execute(query, [title, authorId]);
+    return { _id: book.insertedId, title, authorId: new ObjectId(authorId) };
   },
 };

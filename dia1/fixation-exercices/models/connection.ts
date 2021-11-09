@@ -1,13 +1,21 @@
-import mysql from 'mysql2/promise';
+import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const connection = mysql.createPool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  host: process.env.DB_HOST,
-  database: 'model_example',
-});
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      MONGO_URI: string;
+    }
+  }
+}
+
+const client = new MongoClient(process.env.MONGO_URI);
+
+const connection = async () => {
+  const conn = await client.connect();
+  return conn.db('model_example');
+};
 
 export default connection;

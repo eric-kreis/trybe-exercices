@@ -1,5 +1,7 @@
+import { ObjectId } from 'bson';
+
 export default interface ISerealizedBook {
-  id?: number,
+  _id?: ObjectId,
   title: string,
-  authorId: number
+  authorId: ObjectId
 }

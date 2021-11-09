@@ -25,15 +25,15 @@ const byBookId = async (req: Request, res: Response) => {
 };
 
 const create = async (req: Request, res: Response) => {
-  const { title, author_id: authorId } = req.body;
+  const { title, authorId } = req.body;
 
   const isValid = await BookService.isValid({ title, authorId });
 
   if (!isValid) return res.status(400).json({ message: 'Dados inválidos' });
 
-  await Book.createBook({ title, authorId });
+  const book = await Book.createBook({ title, authorId });
 
-  res.status(201).json({ message: 'Livro criado com sucesso!' });
+  res.status(201).json(book);
 };
 
 export default {

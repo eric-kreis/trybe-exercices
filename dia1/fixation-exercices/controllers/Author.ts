@@ -11,7 +11,7 @@ export default {
   async getById(req: Request, res: Response) {
     const { id } = req.params;
 
-    const author = await Author.getById(+id);
+    const author = await Author.getById(id);
 
     if (!author) return res.status(404).json({ message: 'Autor não encontrado' });
 
@@ -21,7 +21,7 @@ export default {
   async createAuthor(req: Request, res: Response) {
     const {
       first_name: firstName,
-      middle_name: middleName = null,
+      middle_name: middleName,
       last_name: lastName,
     } = req.body;
 
@@ -29,8 +29,8 @@ export default {
       return res.status(400).json({ message: 'Dados inválidos' });
     }
 
-    await Author.create({ firstName, middleName, lastName });
+    const created = await Author.create({ firstName, middleName, lastName });
 
-    res.status(200).json({ message: 'Autor criado com sucesso!' });
+    res.status(200).json(created);
   },
 };
