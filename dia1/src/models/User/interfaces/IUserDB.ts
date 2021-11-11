@@ -5,4 +5,4 @@ interface IUserDB extends IUser {
   _id: ObjectId;
 }
 
-export { IUserDB }
+export { IUserDB };
