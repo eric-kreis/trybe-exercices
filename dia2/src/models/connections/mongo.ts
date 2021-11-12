@@ -1,12 +1,8 @@
 import { MongoClient } from 'mongodb';
 import { config } from 'dotenv';
+import { IEnv } from '../../interfaces';
 
-declare const process: {
-  env: {
-    MONGO_URI: string;
-    MONGO_DATABASE: string;
-  }
-};
+declare const process: { env: IEnv };
 
 config();
 
@@ -20,4 +16,4 @@ const connection = async () => {
   return connect.db(MONGO_DATABASE);
 };
 
-export { connection };
+export default connection;

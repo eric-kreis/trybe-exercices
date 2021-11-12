@@ -1,15 +1,8 @@
 import mysql, { Pool } from 'mysql2/promise';
 import { config } from 'dotenv';
+import { IEnv } from '../../interfaces';
 
-declare const process: {
-  env: {
-    MYSQL_HOST: string;
-    MYSQL_USER: string;
-    MYSQL_PASS: string;
-    MYSQL_PORT: number;
-    MONGO_DATABASE: string;
-  },
-};
+declare const process: { env: IEnv };
 
 config();
 
@@ -18,7 +11,7 @@ const {
   MYSQL_USER,
   MYSQL_PASS,
   MYSQL_PORT,
-  MONGO_DATABASE,
+  MYSQL_DATABASE,
 } = process.env;
 
 let connection: null | Pool = null;
@@ -29,7 +22,7 @@ export default () => {
     port: MYSQL_PORT,
     user: MYSQL_USER,
     password: MYSQL_PASS,
-    database: MONGO_DATABASE,
+    database: MYSQL_DATABASE,
   }));
 
   return connection;

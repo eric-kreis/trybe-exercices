@@ -1,8 +1,10 @@
 {
-  "name": "dia2",
+  "name": "cep-lookup",
   "version": "1.0.0",
   "license": "MIT",
+  "main": "dist/api/server.js",
   "scripts": {
+    "start": "node .",
     "dev": "ts-node-dev --respawn --transpile-only src/api/server.ts",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
