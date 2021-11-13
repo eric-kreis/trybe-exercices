@@ -4,6 +4,7 @@ import { validateCepBody, validateCepParameter } from '../../middlewares';
 
 const router = Router();
 
+router.get('/cep', CepController.findAll);
 router.get('/cep/:cep', validateCepParameter, CepController.findByCep);
 router.post('/cep', validateCepBody, CepController.create);
 

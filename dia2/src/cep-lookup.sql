@@ -10,6 +10,3 @@ CREATE TABLE IF NOT EXISTS ceps (
     localidade VARCHAR(20) NOT NULL,
     uf VARCHAR(2) NOT NULL
 );
-
-INSERT INTO ceps(cep, logradouro, bairro, localidade, uf)
-VALUES ('70254071', 'SQS 313', 'Asa Sul', 'Bloco H', 'DF');
