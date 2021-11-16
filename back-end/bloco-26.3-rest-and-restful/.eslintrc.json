@@ -1,0 +1,35 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "trybe-backend-typescript",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:import/typescript"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "camelcase": "off",
+        "@typescript-eslint/camelcase": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            },
+            "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+        }
+    }
+}
