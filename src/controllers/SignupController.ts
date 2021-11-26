@@ -1,11 +1,14 @@
 import { NextFunction, Request, Response, Router } from 'express';
+import dotenv from 'dotenv';
 import { StatusCodes } from 'http-status-codes';
 
 import UserSchema from '@schemas/UserSchema';
 import createUserToken from '@helpers/createUserToken';
 import User from '@models/User';
 
-class LoginController {
+dotenv.config();
+
+class SignupController {
   private route: Router;
 
   constructor(route: Router) {
@@ -17,31 +20,28 @@ class LoginController {
     const { error } = UserSchema.validate({ username, password });
   
     if (error) return next(error);
-  
+
     const user = await User.findOne({ username });
 
-    if (!user) {
+    if (user) {
       return next({
-        status: StatusCodes.NOT_FOUND,
-        message: 'user not found',
+        status: StatusCodes.CONFLICT,
+        message: 'user already exists',
       });
     }
 
-    if (password !== user.password) {
-      return next({
-        status: StatusCodes.UNAUTHORIZED,
-        message: 'password does not match',
-      });
-    }
+    const admin = Math.floor(Math.random() * 100) > 50;
 
-    const token = createUserToken({ username, admin: user.admin });
+    await User.create({ username, password, admin });
+
+    const token = createUserToken({ username, admin });
 
     res.status(StatusCodes.CREATED).json({ token });
   }
 
   handle() {
-    this.route.post('/', LoginController.createUser);
+    this.route.post('/', SignupController.createUser);
   }
 }
 
-export default LoginController;
+export default SignupController;

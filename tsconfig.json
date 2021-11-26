@@ -26,6 +26,7 @@
       "@interfaces/*": ["./src/interfaces/*"],
       "@schemas/*": ["./src/schemas/*"],
       "@utils/*": ["./src/utils/*"],
+      "@helpers/*": ["./src/helpers/*"]
     }
   }
 }

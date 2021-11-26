@@ -10,7 +10,7 @@ class UserController {
 
   private static getUserInfo(req: Request, res: Response, _next: NextFunction) {
     const { user } = req;
-  
+
     res.status(StatusCodes.OK).json(user);
   }
 
