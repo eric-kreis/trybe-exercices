@@ -3,8 +3,7 @@ const starBtn = document.getElementById('starIcon');
 const sendStar = () => {
   starBtn.addEventListener('click', () => {
     const currentStars = document.getElementById('currentStars');
-    currentStars.innerText = +currentStars.innerText + 1;
-    socket.emit('starPost');
+    socket.emit('starPost', { currentStars: +currentStars.innerText });
   });
 };
 
